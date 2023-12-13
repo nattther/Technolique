@@ -2,19 +2,45 @@
 
 {% block stylesheets %}
     <style>
+    /* Header */
+#head { background:#181015 url( ../images/bg_header.jpg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
+#head.secondary { height:100px; min-height: 100px; padding-top:0px; }
+	#head .lead { font-family:"Open sans", Helvetica, Arial; font-size:44px; margin-bottom:6px; color:white; line-height:1.15em; } 
+	#head .tagline { color:rgba(255,255,255,0.75); margin-bottom:25px; }
+		#head .tagline a { color:#fff; } 
+	#head .btn { margin-bottom:10px;}
+	#head .btn-default { text-shadow: none; background:transparent; color:rgba(255,255,255,.5); -webkit-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.5); -moz-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.5); box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.5); background: transparent; }
+		#head .btn-default:hover,
+		#head .btn-default:focus { color:rgba(255,255,255,.8); -webkit-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.8); -moz-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.8); box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.8); background: transparent; }
+		#head .btn-default:active, 
+		#head .btn-default.active { color:#fff; -webkit-box-shadow:inset 0px 0px 0px 3px #fff; -moz-box-shadow:inset 0px 0px 0px 3px #fff; box-shadow:inset 0px 0px 0px 3px #fff; background: transparent; }
+
+@media (max-width: 767px) {
+	#head { min-height:420px; padding-top:160px; }
+	#head .lead { font-size: 34px; }
+}
+
     </style>
 {% endblock %}
 
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">Les Technoliques</h1>
+				<p class="tagline"> Bienvenue à notre association des Alcooliques Anonymes. Vous êtes entre de bonnes mains. <br> Commencez dès maintenant en participant à une réunion !</p>
+				<p><a class="btn btn-default btn-lg" role="button">Les prochaines réunions</a> <a class="btn btn-action btn-lg" role="button">Nous contacter</a></p>
+			</div>
+		</div>
+	</header>
+
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Accueil</h1>
-                <img class="img-fluid" alt="Logo" src="{{ asset('images/efficom.png') }}">
-                <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-            </div>
+                <h1 class="fw-light">Les réunions</h1>
         </div>
     </section>
 
