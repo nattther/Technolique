@@ -20,6 +20,15 @@ class Salle
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $Date = null;
 
+    #[ORM\Column]
+    private ?int $Nombre_de_participants_maximum = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Photo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +54,42 @@ class Salle
     public function setDate(\DateTimeInterface $Date): static
     {
         $this->Date = $Date;
+
+        return $this;
+    }
+
+    public function getNombreDeParticipantsMaximum(): ?int
+    {
+        return $this->Nombre_de_participants_maximum;
+    }
+
+    public function setNombreDeParticipantsMaximum(int $Nombre_de_participants_maximum): static
+    {
+        $this->Nombre_de_participants_maximum = $Nombre_de_participants_maximum;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Description;
+    }
+
+    public function setDescription(string $Description): static
+    {
+        $this->Description = $Description;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->Photo;
+    }
+
+    public function setPhoto(string $Photo): static
+    {
+        $this->Photo = $Photo;
 
         return $this;
     }
