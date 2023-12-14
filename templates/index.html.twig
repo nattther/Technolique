@@ -32,7 +32,7 @@
 			<div class="row">
 				<h1 class="lead">Les Technoliques</h1>
 				<p class="tagline"> Bienvenue à notre association des Alcooliques Anonymes. Vous êtes entre de bonnes mains. <br> Commencez dès maintenant en participant à une réunion !</p>
-				<p><a class="btn btn-default btn-lg" role="button">Les prochaines réunions</a> <a class="btn btn-action btn-lg" role="button">Nous contacter</a></p>
+				<p><a href="{{ path('app_contact') }}" class="btn btn-default btn-lg" role="button">Nous contacter</a>
 			</div>
 		</div>
 	</header>
@@ -40,29 +40,57 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Les réunions</h1>
+                <h1 class="fw-light">Les prochaines réunions</h1>
         </div>
     </section>
 
+<div class="album">
+    <div class="container-fluid mt-2 p-5">
+        <div class="row mb-5 p-5">
+            {% for salle in salles %}
+                <div class="col-4">
+                    <div class="card border-0">
+                        <img src="{{ salle.photo }}" class="card-img-top rounded-5" alt="Video thumbnail">
+                        <div class="card-body p-4 border-bottom rounded-bottom-5 border-start border-end">
+                            <p class="card-text fw-bold">{{ salle.Lieu }} - {{ salle.date }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="small text-secondary">{{ salle.Description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
-    <div class="album">
-        <div class="container-fluid mt-2 p-5">
-            <div class="row mb-5 p-5">
-                {% for salle in salles %}
-                    <div class="col-3">
-                        <div class="card border-0">
-                            <img src="{{ salle.photo }}" class="card-img-top rounded-5" alt="Video thumbnail">
-                                <div class="card-body p-4 border-bottom rounded-bottom-5 border-start border-end">
-                                    <p class="card-text fw-bold">{{ salle.Lieu }}</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="small text-secondary">
-                                            {{ salle.Description }}
-                                    </div>
-                                </div>
-                            </a>
-                {% endfor %}
+<div class="album">
+    <div class="container-fluid mt-2 p-5">
+        <div class="row mb-5 p-5 justify-content-center">
+            <div class="col-md-3 mx-auto text-center">
+                <div class="card border-0">
+                    <img src="https://m.media-amazon.com/images/I/51uG83MdoxL.jpg" class="card-img-top rounded-5" alt="Image">
+                    <div class="card-body p-4 border-bottom rounded-bottom-5 border-start border-end">
+                        <p class="card-text fw-bold">1 mois</p>
+                        <p class="small text-secondary">Déjà 3450 personnes ont tenu 1 mois, pourquoi pas vous ?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mx-auto text-center">
+                <div class="card border-0">
+                    <img src="https://static.wixstatic.com/media/a5bd37_96e5912880664a8099ce99780741442e~mv2.jpg/v1/fill/w_560,h_560,al_c,lg_1,q_80,enc_auto/121802954_m.jpg" class="card-img-top rounded-5" alt="Image">
+                    <div class="card-body p-4 border-bottom rounded-bottom-5 border-start border-end">
+                        <p class="card-text fw-bold">10 mois</p>
+                        <p class="small text-secondary">Déjà 1450 personnes ont tenu 10 mois, pourquoi pas vous ?</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+
+
+
     </div>
 {% endblock %}
 

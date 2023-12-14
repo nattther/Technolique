@@ -17,8 +17,7 @@ class Salle
     #[ORM\Column(length: 64)]
     private ?string $Lieu = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $Date = null;
+
 
     #[ORM\Column]
     private ?int $Nombre_de_participants_maximum = null;
@@ -28,6 +27,9 @@ class Salle
 
     #[ORM\Column(length: 255)]
     private ?string $Photo = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $date = null;
 
     public function getId(): ?int
     {
@@ -46,17 +48,9 @@ class Salle
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->Date;
-    }
 
-    public function setDate(\DateTimeInterface $Date): static
-    {
-        $this->Date = $Date;
 
-        return $this;
-    }
+
 
     public function getNombreDeParticipantsMaximum(): ?int
     {
@@ -90,6 +84,18 @@ class Salle
     public function setPhoto(string $Photo): static
     {
         $this->Photo = $Photo;
+
+        return $this;
+    }
+
+    public function getDate(): ?string
+    {
+        return $this->date;
+    }
+
+    public function setDate(string $date): static
+    {
+        $this->date = $date;
 
         return $this;
     }
